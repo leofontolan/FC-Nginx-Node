@@ -50,10 +50,5 @@ connection.connect(function (err) {
         if(err) throw err;
         console.log('OK INSERT');
       });
-
-    //   connection.query(`SELECT * FROM people where id= '1'`, (err, rows) => {
-    //     if(err) throw err;
-    //     console.log(   Object.values(JSON.parse(JSON.stringify(rows)))[0].name    );
-    //   });
 });
 
