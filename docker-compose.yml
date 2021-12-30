@@ -1,0 +1,9 @@
+version: '3.5'
+
+services:
+
+  node:
+    image: leofontolan/fc-nginx-node:node
+    container_name: node
+    networks:
+      - nginx-node-net
