@@ -3,7 +3,25 @@ version: '3.5'
 services:
 
   node:
+    build:
+      context: ./node
+      dockerfile: Dockerfile
     image: leofontolan/fc-nginx-node:node
     container_name: node
     networks:
       - nginx-node-net
+
+  nginx:
+    build:
+        context: ./nginx
+        dockerfile: Dockerfile
+    image: leofontolan/fc-nginx-node:nginx
+    container_name: nginx
+    networks:
+      - nginx-node-net
+    ports:
+       - "8080:80"
+
+networks:
+  nginx-node-net:
+    driver: bridge
