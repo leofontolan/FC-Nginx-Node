@@ -10,3 +10,25 @@ app.get('/', (req,res) => {
 app.listen(port, ()=> {
     console.log ('Rodando ' + port)
 })
+
+
+
+
+const mysql = require('mysql');
+
+const con = mysql.createConnection({
+  host: "nginx-node-net",
+  user: "root",
+  password: "root",
+  database: "nodedb"
+});
+
+con.connect(function(err) {
+  if (err) throw err;
+  console.log("Connected!");
+  const sql = "CREATE TABLE people (id INT NOT NULL auto_increment, name VARCHAR(255), PRIMARY KEY(id) )";
+  con.query(sql, function (err, result) {
+    if (err) throw err;
+    console.log("Table created");
+  });
+});

@@ -2,6 +2,18 @@ version: '3.5'
 
 services:
 
+  node:
+    build:
+      context: ./node
+      dockerfile: Dockerfile
+    image: leofontolan/fc-nginx-node:node
+    container_name: node
+    volumes:
+      - ./node:/usr/src/app
+    networks:
+      - nginx-node-net
+    tty: true
+
   db:
     image: mysql:5.7
     command: --innodb-use-native-aio=0
@@ -13,16 +25,6 @@ services:
     environment:
       - MYSQL_DATABASE=nodedb
       - MYSQL_ROOT_PASSWORD=root
-    networks:
-      - nginx-node-net
-
-
-  node:
-    build:
-      context: ./node
-      dockerfile: Dockerfile
-    image: leofontolan/fc-nginx-node:node
-    container_name: node
     networks:
       - nginx-node-net
 
