@@ -1,0 +1,14 @@
+{
+  "name": "fc-desafio",
+  "version": "1.0.0",
+  "description": "desafio full-cycle",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "leofontolan",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
