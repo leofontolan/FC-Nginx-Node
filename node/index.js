@@ -17,7 +17,7 @@ app.listen(port, ()=> {
 const mysql = require('mysql');
 
 const con = mysql.createConnection({
-  host: "nginx-node-net",
+  host: "db",
   user: "root",
   password: "root",
   database: "nodedb"

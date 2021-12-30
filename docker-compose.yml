@@ -8,11 +8,14 @@ services:
       dockerfile: Dockerfile
     image: leofontolan/fc-nginx-node:node
     container_name: node
+    entrypoint: dockerize -wait tcp://db:3306 -timeout 20s node index.js
     volumes:
       - ./node:/usr/src/app
     networks:
       - nginx-node-net
     tty: true
+    depends_on:
+      - db
 
   db:
     image: mysql:5.7
@@ -38,6 +41,8 @@ services:
       - nginx-node-net
     ports:
        - "8080:80"
+    depends_on:
+      - node
 
 networks:
   nginx-node-net:
