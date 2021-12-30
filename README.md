@@ -1,4 +1,4 @@
 # FC-Nginx-Node
 
 
-<code>npm install</code>
+<code>docker-compose up -d --build</code>
