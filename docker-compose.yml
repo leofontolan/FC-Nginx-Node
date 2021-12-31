@@ -9,8 +9,6 @@ services:
     image: leofontolan/fc-nginx-node:node
     container_name: node
     entrypoint: dockerize -wait tcp://db:3306 -timeout 20s node index.js
-    volumes:
-      - ./node:/usr/src/app
     networks:
       - nginx-node-net
     tty: true
