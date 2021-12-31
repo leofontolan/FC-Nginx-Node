@@ -1,5 +1,7 @@
 # FC-Nginx-Node
 
+Fazer o clone do repositótio.
+<br/><br/>
 
 **Rodar o comando abaixo, para gerar as imagens e iniciar os serviços**
 
